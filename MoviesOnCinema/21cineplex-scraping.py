@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
 import pandas as pd
-import datetime 
+import datetime
 
 url = 'https://21cineplex.com/'
 r = requests.get(url,verify=False)
