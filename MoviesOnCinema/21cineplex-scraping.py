@@ -22,4 +22,4 @@ for movie in list_movies :
         advance = ''
     data.append((link,name,rating,advance,current_time))
 df = pd.DataFrame(data, columns = ['link','name','rating','is_advance','load_date'])
-df.to_csv(str.replace(df.load_date.unique()[0],':','-')+'.csv')
+df.to_csv('data/'+str.replace(df.load_date.unique()[0],':','-')+'.csv')
