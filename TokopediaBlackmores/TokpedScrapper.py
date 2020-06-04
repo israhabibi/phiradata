@@ -11,7 +11,6 @@ import os
 from bs4 import BeautifulSoup
 import sqlite3
 
-conn = sqlite3.connect('TokpedBM.db')
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36"
 def search(keyword):
     #mengambil jumlah data keseluruhan dari tokopedia sesuai keyword
@@ -36,13 +35,15 @@ def search(keyword):
         data_final['keyword'] = keyword
     return data_final
 #     MasterDF.to_csv(keyword+".csv")
-data_produk = pd.read_csv('Data Blackmores Kalbestore.csv')
-a = data_produk['nama_produk'][0]
-my_new_string = re.sub('[^a-zA-Z0-9 \n\.]', '', a)
-# my_new_string
-i = 1
-for prd in data_produk['nama_produk']:
-    data_crawling = search(prd)
-    data_crawling.to_csv(re.sub('[^a-zA-Z0-9 \n\.]', '', prd)+'.csv')
-    print(str(i) + ' - '+ prd)
-    i=i+1
+
+if __name__ == "__main_":
+    data_produk = pd.read_csv('D:\Project\phiradata\TokopediaBlackmores\Data Blackmores Kalbestore.csv')
+    a = data_produk['nama_produk'][0]
+    my_new_string = re.sub('[^a-zA-Z0-9 \n\.]', '', a)
+    # my_new_string
+    i = 1
+    for prd in data_produk['nama_produk']:
+        data_crawling = search(prd)
+        data_crawling.to_csv(re.sub('D:\Project\phiradata\TokopediaBlackmores\1'+'[^a-zA-Z0-9 \n\.]', '', prd)+'.csv')
+        print(str(i) + ' - '+ prd)
+        i=i+1
