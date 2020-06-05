@@ -2,8 +2,8 @@
 ---------------------------------
 Project : 
 1. Web Scrapping Tokopedia : TokPedScrapper.py
-    usage : 
-    python TokPedScrapper.py "Celana Pendek" 5
+   - usage : 
+     python TokPedScrapper.py "Celana Pendek" 5
 
 ----------------------------------
 Log:
