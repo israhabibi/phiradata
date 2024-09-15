@@ -1,0 +1,4 @@
+FROM python:3.7-alpine
+COPY app.py /app.py
+copy driver_registration.csv /driver_registration.csv
+CMD ["python", "app.py"]
